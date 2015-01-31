@@ -3,6 +3,7 @@
 
 import argparse
 from cassandra.cluster import Cluster
+from cassandra import ConsistencyLevel
 import csv
 
 
@@ -21,6 +22,8 @@ INSERT_USERS = SESSION.prepare("""
     group)
     VALUES (?,?,?,?,?)
 """)
+
+INSERT_USERS.consistency_level = ConsistencyLevel.ONE
 
 
 def getopts():
