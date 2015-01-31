@@ -1,0 +1,5 @@
+id,name,email,group
+100,"Bob Smokes","bsmokes@example.com","engineering"
+101,"Sally Smith","ssmith@example.com","management"
+102,"Mike Franklin","mfranklin@example.com","marketing"
+103,"Veronica Kim","vkim@example.com","engineering"
