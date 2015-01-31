@@ -52,3 +52,24 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Temp files / working directories
+*.swp
+.sass-cache/
+*.sql~
+*.py~
+*.*~
+
+# Data files
+*.seed
+*.log
+*.dat
+
+# Compressed files
+*.bz
+*.gz
+*.tar
+*.zip
+
+# PyCharm
+.idea
