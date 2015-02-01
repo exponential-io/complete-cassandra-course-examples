@@ -29,8 +29,7 @@ GET_USER = SESSION.prepare("""
         id,
         fname,
         lname,
-        email,
-        group
+        email
     FROM users
     WHERE id = ?
 """)
@@ -74,11 +73,16 @@ def create_user():
                               input['email']])
     return jsonify(result="Created user")
 
+
 @app.route('/users/<int:user_id>', methods=['GET'])
 def read_user(user_id):
     """Get one user"""
-    result = SESSION.execute(GET_USER, [user_id])
-    return jsonify(result=result)
+    result = SESSION.execute(GET_USER, [user_id])[0]
+    user = {'id': result.id,
+            'fname': result.fname,
+            'lname': result.lname,
+            'email': result.email}
+    return jsonify(user=user)
 
 
 @app.route('/users/<int:user_id>', methods=['PUT'])
